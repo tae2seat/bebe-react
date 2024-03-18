@@ -16,6 +16,8 @@ import ProductEdit from "./pages/mall/ProductEdit.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import ProfileEdit from "./pages/profile/ProfileEdit.jsx";
 import Register from "./pages/Register.jsx";
+import { Provider } from "react-redux";
+import { store } from "./redux/store.js";
 
 const router = createBrowserRouter([
   {
@@ -96,5 +98,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
