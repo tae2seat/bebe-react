@@ -9,10 +9,9 @@ export default function LoginForm({ handleLogin }) {
   } = useForm();
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(handleLogin)}>
       <input
         type="email"
-        onSubmit={handleSubmit(handleLogin)}
         {...register("email", {
           required: "이메일은 필수 입력 사항입니다.",
           pattern: {
