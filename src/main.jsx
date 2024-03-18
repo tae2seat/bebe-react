@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/notfound",
+        element: <NotFound />,
+      },
+      {
         path: "/login",
         element: <Login />,
       },
