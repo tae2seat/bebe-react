@@ -16,6 +16,7 @@ import ProductEdit from "./pages/mall/ProductEdit.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import ProfileEdit from "./pages/profile/ProfileEdit.jsx";
 import Register from "./pages/Register.jsx";
+import Kit from "./pages/Kit.jsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/kit",
+        element: <Kit />,
       },
       {
         path: "/diaries",
