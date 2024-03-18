@@ -1,7 +1,7 @@
 import LoginForm from "../components/form/LoginForm";
 import { authApi } from "../api/axios/index";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../redux/slices/authSlice";
 
 export default function Login() {
@@ -29,6 +29,7 @@ export default function Login() {
     <section>
       <h1>로그인하기</h1>
       <LoginForm handleLogin={handleLogin} />
+      <Link to="/register">회원가입하기</Link>
     </section>
   );
 }
