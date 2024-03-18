@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { loggedApi } from "../../axios";
+import { loggedApi } from "../../api/axios/index";
 
 export const getBabyProfile = createAsyncThunk(
   "babyProfile/getBabyProfile",
