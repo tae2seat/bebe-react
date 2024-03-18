@@ -56,6 +56,7 @@ export default function JoinForm({ handleJoin }) {
         <option value="여자">여자</option>
       </select>
       {errors.gender && <p>{errors.gender.message}</p>}
+      {/* <button>회원가입하기</button> */}
     </form>
   );
 }
