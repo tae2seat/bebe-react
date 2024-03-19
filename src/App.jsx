@@ -4,7 +4,7 @@ import Footer from "./components/layout/Footer";
 
 function App() {
   return (
-    <div className=" max-w-[1280px] m-auto text-center ">
+    <div className=" max-w-[1080px] m-auto text-center ">
       <Header />
       <Outlet />
       <Footer />
