@@ -6,7 +6,7 @@ export default function ProductCard({ item }) {
   const productId = item.id;
 
   const goToProductDetail = () => {
-    navigate(`/product/${productId}/detail`);
+    navigate(`/product/${productId}`);
   };
   return (
     <ul onClick={goToProductDetail}>

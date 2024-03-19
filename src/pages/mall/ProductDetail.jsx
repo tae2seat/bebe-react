@@ -3,16 +3,14 @@ import ProductDetailCard from "../../components/mall/ProductDetailCard";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { loggedApi } from "../../api/axios";
+import PropTypes from "prop-types";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { isAdmin, userRole } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-  const [product, setProduct] = useState("");
 
-  const goToEdit = () => {
-    navigate(`/product/${id}/edit`);
-  };
+  const [product, setProduct] = useState("");
 
   useEffect(() => {
     getProductDetail();
@@ -31,6 +29,14 @@ export default function ProductDetail() {
     }
   };
 
+  const goToEdit = () => {
+    navigate(`/product/${id}/edit`);
+  };
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section>
       <h1>제품 상세 페이지</h1>
@@ -41,3 +47,6 @@ export default function ProductDetail() {
     </section>
   );
 }
+ProductDetail.propTypes = {
+  product: PropTypes.string.isRequired,
+};
