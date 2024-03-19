@@ -1,11 +1,18 @@
+import { useNavigate, useParams } from "react-router-dom";
 import ProductDetailCard from "../../components/mall/ProductDetailCard";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { loggedApi } from "../../api/axios";
-import { useParams } from "next/navigation";
 
 export default function ProductDetail() {
-  const param = useParams();
+  const { id } = useParams();
+  const { isAdmin, userRole } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const [product, setProduct] = useState("");
+
+  const goToEdit = () => {
+    navigate(`/product/${id}/edit`);
+  };
 
   useEffect(() => {
     getProductDetail();
@@ -27,7 +34,10 @@ export default function ProductDetail() {
   return (
     <section>
       <h1>제품 상세 페이지</h1>
-      <ProductDetailCard />
+      <ProductDetailCard product={product} />
+      {isAdmin && userRole === "admin" && (
+        <button onClick={goToEdit}>제품 수정하기</button>
+      )}
     </section>
   );
 }
