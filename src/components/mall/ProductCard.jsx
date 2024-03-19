@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function ProductCard({ item }) {
   const navigate = useNavigate();
   const productId = item.id;
-\
+
   const goToProductDetail = () => {
     navigate(`/product/${productId}/detail`);
   };
@@ -15,7 +15,6 @@ export default function ProductCard({ item }) {
         <div>
           <h3>{item.name}</h3>
           <h5>{item.price}원</h5>
-          <h5>{item.categoryName}</h5>
           <h5>{item.description}</h5>
         </div>
       </li>
