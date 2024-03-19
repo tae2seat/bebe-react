@@ -5,7 +5,7 @@ import vector from "../../assets/icons/vector.png";
 export default function Banner() {
   return (
     <section>
-      <img src={banner} alt="banner" style={{ maxWidth: "1024px" }} />
+      <img src={banner} alt="banner" />
       <div>
         <div>
           <p>we support</p>
