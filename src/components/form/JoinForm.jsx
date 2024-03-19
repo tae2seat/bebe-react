@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import PropTypes from "prop-types";
 
 export default function JoinForm({ handleJoin }) {
   const {
@@ -60,3 +61,7 @@ export default function JoinForm({ handleJoin }) {
     </form>
   );
 }
+
+JoinForm.propTypes = {
+  handleJoin: PropTypes.func.isRequired,
+};
