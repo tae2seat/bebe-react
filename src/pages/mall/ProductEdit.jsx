@@ -1,3 +1,7 @@
 export default function ProductEdit() {
-  return <h1>Product Edit </h1>;
+  return (
+    <section>
+      <h1>제품 수정하기</h1>
+    </section>
+  );
 }
