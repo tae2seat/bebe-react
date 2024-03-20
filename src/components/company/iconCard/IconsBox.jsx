@@ -159,7 +159,7 @@ export default function IconsBox() {
       className="flex flex-col justify-center items-center gap-1 w-16 h-16 bg-slate-200 rounded-full transition-transform hover:scale-110 "
     >
       <img src={icon.src} alt={icon.name} className="w-8 h-8" />
-      <p className="text-xs">{icon.name}</p>
+      <p className="text-[10px]">{icon.name}</p>
     </div>
   ));
   return (
