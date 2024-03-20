@@ -64,8 +64,8 @@ export default function ColorBox() {
         const className = `${circle.bgcolor} ${circle.text} ${circle.hoverText}`;
         return (
           <div key={idx} className={className}>
-            <p className="text-lg">{circle.info}</p>
-            <p className="text-xs">{circle.name}</p>
+            <p>{circle.info}</p>
+            <p>{circle.name}</p>
           </div>
         );
       })}
