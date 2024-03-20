@@ -12,10 +12,11 @@ export default function Colors() {
         통일시켜 소비자의 혼란을 줄여줍니다.
       </p>
       <h1 className="text-[20px] my-4">Colors</h1>
+
+      <ColorBox />
       <span className="text-[10px] underline">
         색 위에 마우스를 올리면 색 고유번호를 알 수 있습니다.
       </span>
-      <ColorBox />
     </section>
   );
 }

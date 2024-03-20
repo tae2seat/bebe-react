@@ -9,7 +9,7 @@ export default function ColorBox() {
     },
     {
       name: "#FFCDC3",
-      info: "brand color",
+      info: "베베 메인색",
       bgcolor: "bg-brand2",
       hoverText: "hover:text-black",
       text: "text-brand2",
@@ -30,7 +30,7 @@ export default function ColorBox() {
     },
     {
       name: "#FFF0F0",
-      info: "brand color",
+      info: "베베 서브색",
       bgcolor: "bg-brand5",
       hoverText: "hover:text-black",
       text: "text-brand5",
