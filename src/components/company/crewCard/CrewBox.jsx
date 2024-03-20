@@ -104,7 +104,7 @@ export default function CrewBox() {
       <img
         src={crews.image}
         alt="크루 이미지"
-        className="w-40 h-40 rounded-full object-cover"
+        className="w-24 h-24 rounded-full object-cover"
       />
       <p>{crews.name}</p>
       <p>{crews.job}</p>
@@ -120,7 +120,7 @@ export default function CrewBox() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-2 md:grid-cols-3">
         {crewsList.splice(0, 6)}
       </div>
       {more === true ? (
