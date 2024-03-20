@@ -106,9 +106,9 @@ export default function CrewBox() {
         alt="크루 이미지"
         className="w-24 h-24 rounded-full object-cover"
       />
-      <p>{crews.name}</p>
-      <p>{crews.job}</p>
-      <p>{crews.info}</p>
+      <p className="text-sm mt-4">{crews.name}</p>
+      <p className="text-xs">{crews.job}</p>
+      <p className="text-xs">{crews.info}</p>
     </div>
   ));
 
@@ -120,20 +120,26 @@ export default function CrewBox() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 mx-6">
         {crewsList.splice(0, 6)}
       </div>
       {more === true ? (
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 mx-6">
           {" "}
           {crewsList.splice(0, 6)}{" "}
         </div>
       ) : null}
       <div>
         {more === true ? (
-          <button onClick={onClickHandler}> 간편하게 보기</button>
+          <button onClick={onClickHandler} className="my-2 text-xs underline">
+            {" "}
+            간편하게 보기
+          </button>
         ) : (
-          <button onClick={onClickHandler}> Bebe Crew 더보기</button>
+          <button onClick={onClickHandler} className="my-2 text-xs underline">
+            {" "}
+            Bebe Crew 더보기
+          </button>
         )}
       </div>
     </div>

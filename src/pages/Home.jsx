@@ -6,12 +6,12 @@ import Crew from "../components/company/Crew";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col gap-10">
       <Banner />
       <Service />
       <Icons />
       <Colors />
       <Crew />
-    </>
+    </div>
   );
 }
