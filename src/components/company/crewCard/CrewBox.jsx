@@ -100,15 +100,15 @@ export default function CrewBox() {
     },
   ];
   const crewsList = crews.map((crews) => (
-    <div key={crews.id}>
-      <div>
-        <img src={crews.image} alt="크루 이미지" />
-      </div>
-      <div>
-        <p>{crews.name}</p>
-        <p>{crews.job}</p>
-        <p>{crews.info}</p>
-      </div>
+    <div key={crews.id} className="flex flex-col items-center my-4">
+      <img
+        src={crews.image}
+        alt="크루 이미지"
+        className="w-40 h-40 rounded-full object-cover"
+      />
+      <p>{crews.name}</p>
+      <p>{crews.job}</p>
+      <p>{crews.info}</p>
     </div>
   ));
 
@@ -120,13 +120,20 @@ export default function CrewBox() {
 
   return (
     <div>
-      <div>{crewsList.splice(0, 6)}</div>
-      {more === true ? <div> {crewsList.splice(0, 6)} </div> : null}
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        {crewsList.splice(0, 6)}
+      </div>
+      {more === true ? (
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {" "}
+          {crewsList.splice(0, 6)}{" "}
+        </div>
+      ) : null}
       <div>
         {more === true ? (
           <button onClick={onClickHandler}> 간편하게 보기</button>
         ) : (
-          <button onClick={onClickHandler}> 더 알아보기</button>
+          <button onClick={onClickHandler}> Bebe Crew 더보기</button>
         )}
       </div>
     </div>
