@@ -154,10 +154,17 @@ const icons = [
 
 export default function IconsBox() {
   const iconList = icons.map((icon) => (
-    <div key={icon.name}>
-      <img src={icon.src} alt={icon.name} />
-      <p>{icon.name}</p>
+    <div
+      key={icon.name}
+      className="flex flex-col justify-center items-center gap-1 w-16 h-16 bg-slate-200 rounded-full transition-transform hover:scale-110 "
+    >
+      <img src={icon.src} alt={icon.name} className="w-8 h-8" />
+      <p className="text-xs">{icon.name}</p>
     </div>
   ));
-  return <div>{iconList}</div>;
+  return (
+    <div className="mx-10 grid grid-cols-4 place-items-center gap-y-2">
+      {iconList}
+    </div>
+  );
 }
