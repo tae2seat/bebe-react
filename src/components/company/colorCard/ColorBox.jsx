@@ -59,16 +59,26 @@ export default function ColorBox() {
   ];
 
   return (
-    <div>
-      {circles.map((circle, idx) => {
-        const className = `${circle.bgcolor} ${circle.text} ${circle.hoverText}`;
-        return (
-          <div key={idx} className={className}>
-            <p>{circle.info}</p>
-            <p>{circle.name}</p>
-          </div>
-        );
-      })}
+    <div className="flex justify-center gap-10">
+      <div className="w-32">
+        {circles.map((circle, idx) => {
+          const className = `${circle.bgcolor} ${circle.text} ${circle.hoverText}`;
+          return (
+            <div key={idx} className={className}>
+              <p>{circle.name}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        {circles.map((circle, idx) => {
+          return (
+            <p key={idx} className="">
+              {circle.info}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 }

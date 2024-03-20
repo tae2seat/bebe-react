@@ -11,6 +11,7 @@ export default function Colors() {
       </p>
       <h1 className="text-[26px]">Colors</h1>
       <ColorBox />
+      <span>색 위에 마우스를 올리면 색 고유번호를 알 수 있습니다.</span>
     </section>
   );
 }
