@@ -9,16 +9,16 @@ export default function ProductCard({ item }) {
     navigate(`/product/${productId}`);
   };
   return (
-    <ul onClick={goToProductDetail}>
-      <li>
-        {/* <img src={item.image} alt="productImg" /> */}
-        <div>
-          <h3>{item.name}</h3>
-          <h5>{item.price}원</h5>
-          <h5>{item.description}</h5>
-        </div>
-      </li>
-    </ul>
+    <div onClick={goToProductDetail} className="border rounded-xl">
+      <img
+        src={item.image}
+        alt="productImg"
+        className="w-64 h-64 p-2 rounded-xl"
+      />
+      <h3 className="text-sm my-1">{item.name}</h3>
+      <h5 className="text-xs mt-1">{item.price}원</h5>
+      <h5 className="text-[10px] mb-1">{item.description}</h5>
+    </div>
   );
 }
 
