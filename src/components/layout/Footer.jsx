@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="flex flex-col justify-around bg-black text-white p-5 ">
+    <div className="flex flex-col justify-around bg-brand5 text-gray-500 p-5 ">
       <div className="flex justify-around items-start">
         <div>
           <h2 className="text-sm mb-2">Bebe Family</h2>
