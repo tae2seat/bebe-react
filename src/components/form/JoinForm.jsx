@@ -17,7 +17,7 @@ export default function JoinForm({ handleJoin }) {
         })}
         placeholder="이름"
       />
-      {errors.name && <p>{errors.name.message}</p>}
+      {errors.name && <p className="text-xs">{errors.name.message}</p>}
       <input
         type="email"
         {...register("email", {
@@ -29,7 +29,7 @@ export default function JoinForm({ handleJoin }) {
         })}
         placeholder="이메일"
       />
-      {errors.email && <p>{errors.email.message}</p>}
+      {errors.email && <p className="text-xs">{errors.email.message}</p>}
       <input
         type="password"
         {...register("password", {
@@ -38,7 +38,7 @@ export default function JoinForm({ handleJoin }) {
         })}
         placeholder="비밀번호"
       />
-      {errors.password && <p>{errors.password.message}</p>}
+      {errors.password && <p className="text-xs">{errors.password.message}</p>}
       <input
         type="date"
         {...register("birthDate", {
@@ -46,7 +46,9 @@ export default function JoinForm({ handleJoin }) {
         })}
         placeholder="생년월일"
       />
-      {errors.birthDate && <p>{errors.birthDate.message}</p>}
+      {errors.birthDate && (
+        <p className="text-xs">{errors.birthDate.message}</p>
+      )}
       <select
         className="p-4 outline-none border border-gray-300 my-1 text-gray-400"
         {...register("gender", {
@@ -57,7 +59,7 @@ export default function JoinForm({ handleJoin }) {
         <option value="남자">남자</option>
         <option value="여자">여자</option>
       </select>
-      {errors.gender && <p>{errors.gender.message}</p>}
+      {errors.gender && <p className="text-xs">{errors.gender.message}</p>}
       <button>회원가입하기</button>
     </form>
   );
