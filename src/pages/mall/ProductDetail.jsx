@@ -1,15 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import ProductDetailCard from "../../components/mall/ProductDetailCard";
-import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { loggedApi } from "../../api/axios";
 import PropTypes from "prop-types";
+import MyCart from "../../components/mall/MyCart";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { isAdmin, userRole } = useSelector((state) => state.auth);
-  const navigate = useNavigate();
-
   const [product, setProduct] = useState("");
 
   useEffect(() => {
@@ -33,7 +30,7 @@ export default function ProductDetail() {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
     console.log(cartItems);
     const existingItemIndex = cartItems.findIndex(
-      (item) => item.id === product.id && item.option === newOption
+      (item) => item.id === product.id
     );
 
     if (existingItemIndex !== -1) {
@@ -45,7 +42,6 @@ export default function ProductDetail() {
       // 상품이 장바구니에 존재하지 않는 경우
       const item = {
         ...product,
-        option: newOption,
         quantity: 1,
       };
       cartItems.push(item);
@@ -65,6 +61,7 @@ export default function ProductDetail() {
         <button onClick={goToEdit}>제품 수정하기</button>
       )} */}
       <button onClick={() => addToCart(product)}>장바구니 추가</button>
+      <MyCart />
     </section>
   );
 }
