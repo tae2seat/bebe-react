@@ -9,7 +9,7 @@ export default function JoinForm({ handleJoin }) {
   } = useForm();
 
   return (
-    <form onSubmit={handleSubmit(handleJoin)}>
+    <form onSubmit={handleSubmit(handleJoin)} className="flex flex-col p-12">
       <input
         type="text"
         {...register("name", {
@@ -48,6 +48,7 @@ export default function JoinForm({ handleJoin }) {
       />
       {errors.birthDate && <p>{errors.birthDate.message}</p>}
       <select
+        className="p-4 outline-none border border-gray-300 my-1 text-gray-400"
         {...register("gender", {
           required: "성별은 필수 선택 사항입니다.",
         })}

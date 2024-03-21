@@ -9,7 +9,7 @@ export default function LoginForm({ handleLogin }) {
   } = useForm();
 
   return (
-    <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col p-12">
+    <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col mb-80">
       <input
         type="email"
         {...register("email", {
@@ -31,7 +31,7 @@ export default function LoginForm({ handleLogin }) {
         placeholder="비밀번호"
       />
       {errors.password && <p>{errors.password.message}</p>}
-      <button>로그인하기</button>
+      <button className="mt-8">로그인하기</button>
     </form>
   );
 }

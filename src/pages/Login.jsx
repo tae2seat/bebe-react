@@ -26,8 +26,8 @@ export default function Login() {
     }
   };
   return (
-    <section className="mx-auto w-[400px]">
-      <h1 className="text-xl font-semibold">로그인하기</h1>
+    <section className="w-[300px] mx-auto">
+      <h1 className="text-xl font-semibold my-16">Login</h1>
       <LoginForm handleLogin={handleLogin} />
       <Link to="/register" className="underline">
         회원가입하기

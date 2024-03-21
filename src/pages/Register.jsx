@@ -17,8 +17,8 @@ export default function Register() {
   };
 
   return (
-    <section>
-      <h1>회원가입하기</h1>
+    <section className="mx-auto w-[400px] text-center">
+      <h1 className="text-2xl mt-20 font-semibold">회원가입하기</h1>
       <JoinForm handleJoin={handleJoin} />
     </section>
   );
