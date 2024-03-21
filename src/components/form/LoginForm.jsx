@@ -9,7 +9,7 @@ export default function LoginForm({ handleLogin }) {
   } = useForm();
 
   return (
-    <form onSubmit={handleSubmit(handleLogin)}>
+    <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col p-12">
       <input
         type="email"
         {...register("email", {

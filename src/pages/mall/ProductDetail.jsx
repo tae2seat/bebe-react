@@ -29,8 +29,28 @@ export default function ProductDetail() {
     }
   };
 
-  const goToEdit = () => {
-    navigate(`/product/${id}/edit`);
+  const addToCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(cartItems);
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.id === product.id && item.option === newOption
+    );
+
+    if (existingItemIndex !== -1) {
+      // 상품이 이미 장바구니에 존재하는 경우
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += 1;
+      localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    } else {
+      // 상품이 장바구니에 존재하지 않는 경우
+      const item = {
+        ...product,
+        option: newOption,
+        quantity: 1,
+      };
+      cartItems.push(item);
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
   };
 
   if (!product) {
@@ -38,12 +58,13 @@ export default function ProductDetail() {
   }
 
   return (
-    <section>
-      <h1>제품 상세 페이지</h1>
+    <section className="flex flex-col md:flex-row p-4">
+      <h2 className="text-center text-2xl font bold py-8">제품 상세페이지</h2>
       <ProductDetailCard product={product} />
-      {isAdmin && userRole === "admin" && (
+      {/* {isAdmin && userRole === "admin" && (
         <button onClick={goToEdit}>제품 수정하기</button>
-      )}
+      )} */}
+      <button onClick={() => addToCart(product)}>장바구니 추가</button>
     </section>
   );
 }

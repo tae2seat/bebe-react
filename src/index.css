@@ -12,6 +12,7 @@ font-face {
 body {
   margin: 0;
   font-family: 'SUITE-Regular';
+  margin: 0; 
   @apply flex flex-col items-center
 }
 
